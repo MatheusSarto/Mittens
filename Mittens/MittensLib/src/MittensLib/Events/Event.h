@@ -1,33 +1,34 @@
 #pragma once
 #include <string>
+#include <vector>
 
 namespace Mittens
 {	
 	enum EventCategory
 	{
-		NONE = 0,
-		INPUT,
-		APPLICATION
+		None = 0,
+		Input,
+		Application
 	};
 
-	enum EventType
+	enum class EventType
 	{
-		KEY_PRESSED, KEY_RELEASED,
-		_MOUSE_MOVED, MOUSE_SCROLLED, MOUSE_BUTTON_PRESSED, MOUSE_BUTTON_RELEASED,
-		WINDOW_CLOSED, WIDNOW_LOST_FOCUS, WINDOW_FOCUS, WINDOW_RESIZE, WINDOW_MOVED,
-		APP_RENDER, APP_TICK, APP_UPDATE
+		Key_Pressed, Key_Pressed,
+		Mouse_Moved, Mouse_Scrolled, Mouse_Button_Pressed, Mouse_Button_Released,
+		Window_Closed, Window_Lost_Focus, Window_Focus, Window_Resize, Window_Moved,
+		App_Render, App_Tick, App_Update
 	};
 
 	class Event
 	{
 	public:
+		
+		virtual ~Event() = default;
+
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
 
-	protected:
-		Event() { }
-	private:
 		bool m_Handled;
 	};
 
@@ -36,4 +37,4 @@ namespace Mittens
 								virtual const char* GetName() const override { return #type; }
 
 	#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
-}
+} 

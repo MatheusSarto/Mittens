@@ -22,8 +22,8 @@ namespace Mittens
 		{
 		}
 
-		EVENT_CLASS_TYPE(MOUSE_BUTTON_PRESSED)
-		EVENT_CLASS_CATEGORY(INPUT)
+		EVENT_CLASS_TYPE(Mouse_Button_Pressed)
+		EVENT_CLASS_CATEGORY(Input)
 	protected:
 
 	};
@@ -36,8 +36,8 @@ namespace Mittens
 		{
 		}
 
-		EVENT_CLASS_TYPE(MOUSE_BUTTON_RELEASED)
-		EVENT_CLASS_CATEGORY(INPUT)
+		EVENT_CLASS_TYPE(Mouse_Button_Released)
+		EVENT_CLASS_CATEGORY(Input)
 	protected:
 
 	};
@@ -49,8 +49,8 @@ namespace Mittens
 		{
 		}
 
-		EVENT_CLASS_TYPE(MOUSE_SCROLLED)
-		EVENT_CLASS_CATEGORY(INPUT)
+		EVENT_CLASS_TYPE(Mouse_Scrolled)
+		EVENT_CLASS_CATEGORY(Input)
 	protected:
 		float m_xOffSet;
 		float m_yOffSet;
@@ -63,8 +63,8 @@ namespace Mittens
 		{
 		}
 
-		EVENT_CLASS_TYPE(_MOUSE_MOVED)
-		EVENT_CLASS_CATEGORY(INPUT)
+		EVENT_CLASS_TYPE(Mouse_Moved)
+		EVENT_CLASS_CATEGORY(Input)
 	protected:
 		float m_MouseX;
 		float m_MouseY;
