@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Core.h"
+#include "Events/Event.h"
+#include "Window.h"
 
 namespace Mittens
 {
@@ -11,8 +13,13 @@ namespace Mittens
 		virtual ~Application();
 
 		void Run(void);
+
+	private:
+		std::unique_ptr<Window> m_Window;
+		EventQueue* m_EventQueue;
+		bool m_Running = true;
 	};
 
-	// To be Defined in CLIENT
+	// To be Defined on CLIENT
 	Application* CreateApplication();
 }

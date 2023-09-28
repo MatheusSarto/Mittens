@@ -1,0 +1,5 @@
+﻿  App.cpp
+C:\Users\Matheus\Documents\GitHub\Mittens\Mittens\MittensLib\src\MittensLib\Application.h(18,27): warning C4251: 'Mittens::Application::m_Window': class 'std::unique_ptr<Mittens::Window,std::default_delete<Mittens::Window>>' needs to have dll-interface to be used by clients of class 'Mittens::Application'
+C:\Users\Matheus\Documents\GitHub\Mittens\Mittens\MittensLib\src\MittensLib\Application.h(18,8): message : see declaration of 'std::unique_ptr<Mittens::Window,std::default_delete<Mittens::Window>>'
+LIBCMTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+..\bin\Debug-windows-x86_64\Mittens\Mittens.exe : fatal error LNK1120: 1 unresolved externals

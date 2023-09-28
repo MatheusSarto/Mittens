@@ -9,6 +9,7 @@ public:
 
 Mittens::Application* Mittens::CreateApplication()
 {
+	OutputDebugStringA("Creating Application\n");
 	return new AppInstance();
 }
 

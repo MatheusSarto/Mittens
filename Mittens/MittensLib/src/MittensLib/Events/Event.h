@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 #include <vector>
+#include<map>
+#include<forward_list>
+#include "Events/EventHandler.h"
 
 namespace Mittens
 {	
@@ -8,12 +11,12 @@ namespace Mittens
 	{
 		None = 0,
 		Input,
-		Application
+		e_Application
 	};
 
 	enum class EventType
 	{
-		Key_Pressed, Key_Pressed,
+		Key_Pressed, Key_Released,
 		Mouse_Moved, Mouse_Scrolled, Mouse_Button_Pressed, Mouse_Button_Released,
 		Window_Closed, Window_Lost_Focus, Window_Focus, Window_Resize, Window_Moved,
 		App_Render, App_Tick, App_Update
@@ -30,6 +33,50 @@ namespace Mittens
 		virtual int GetCategoryFlags() const = 0;
 
 		bool m_Handled;
+	};
+
+	class EventQueue
+	{
+	// ------EVENT QUEUE INTERFACE------
+	public:
+
+		friend class Application;
+
+		void QueueEvent(EventType eventType, EventHandler* handler)
+		{
+			auto it = m_Handlers.find(eventType);
+			if (it == m_Handlers.end())
+			{
+				m_Handlers[eventType] = Handlers();
+			}
+
+			m_Handlers[eventType].push_front(handler);
+		}
+	
+		typedef std::forward_list<EventHandler*> Handlers;
+		typedef std::map<EventType, Handlers> ObserversMap;
+
+		ObserversMap m_Handlers;
+	private:
+		EventQueue() {}
+
+		void NotifyAll()
+		{
+			for (ObserversMap::iterator it = m_Handlers.begin(); it != m_Handlers.end(); ++it)
+			{
+				for (auto& o : m_Handlers[it->first]) {
+					o->OnEvent();
+				}
+			}
+		}
+		void Notify(EventType eventType)
+		{
+			for (auto& o : m_Handlers[eventType]) {
+				o->OnEvent();
+			}
+		}
+
+		static void Dispatch() {}
 	};
 
 	#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\

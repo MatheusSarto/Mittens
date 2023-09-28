@@ -1,13 +1,21 @@
 #pragma once
+#include "Application.h"
 
 #ifdef PLATAFORM_WINDOWS
-	
+#include <windows.h>
+#include <string.h>
 extern Mittens::Application* Mittens::CreateApplication();
+
 
 int main(int argc, char** argv)
 {
-	Mittens::Application* App = Mittens::CreateApplication();
-	App->Run();
-	delete App;
+
+	auto app = Mittens::CreateApplication();
+
+	app->Run();
+
+	delete app;
+
 }
+
 #endif
