@@ -1,5 +1,5 @@
 project "Mittens"
-	kind "WindowedApp"
+	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "on"
@@ -18,12 +18,13 @@ project "Mittens"
         "%{wks.location}/MittensLib/src",
         "%{wks.location}/MittensLib/vendor",
         "%{wks.location}/MittensLib/%{IncludeDir.glm}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.GLFW}"
     }
 
     links
     {
-        "MittensLib"
+        "MittensLib",
     }
 
     filter "system:windows"
@@ -36,7 +37,7 @@ project "Mittens"
 
         postbuildcommands
 		{
-			"{COPY} %{wks.location}/bin/" .. outputdir .. "/MittensLib/*.dll %{wks.location}/bin/" .. outputdir .. "/Sandbox", --  Delte this ? idk
+			-- "{COPY} %{wks.location}/bin/" .. outputdir .. "/MittensLib/*.dll %{wks.location}/bin/" .. outputdir .. "/Sandbox", --  Delte this ? idk
 			"{COPY} %{wks.location}/bin/" .. outputdir .. "/MittensLib/*.dll %{wks.location}/bin/" .. outputdir .. "/Mittens"
 		}
 

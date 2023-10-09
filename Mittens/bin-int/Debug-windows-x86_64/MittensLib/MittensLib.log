@@ -1,10 +1,2 @@
 ﻿     Creating library ..\bin\Debug-windows-x86_64\MittensLib\MittensLib.lib and object ..\bin\Debug-windows-x86_64\MittensLib\MittensLib.exp
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwInit referenced in function "private: virtual void __cdecl Mittens::WindowsWindow::Init(struct Mittens::WindowProps const &)" (?Init@WindowsWindow@Mittens@@EEAAXAEBUWindowProps@2@@Z)
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function "private: virtual void __cdecl Mittens::WindowsWindow::Init(struct Mittens::WindowProps const &)" (?Init@WindowsWindow@Mittens@@EEAAXAEBUWindowProps@2@@Z)
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwDestroyWindow referenced in function "private: virtual void __cdecl Mittens::WindowsWindow::Shutdown(void)" (?Shutdown@WindowsWindow@Mittens@@EEAAXXZ)
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwSetWindowUserPointer referenced in function "private: virtual void __cdecl Mittens::WindowsWindow::Init(struct Mittens::WindowProps const &)" (?Init@WindowsWindow@Mittens@@EEAAXAEBUWindowProps@2@@Z)
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function "public: virtual void __cdecl Mittens::WindowsWindow::OnUpdate(void)" (?OnUpdate@WindowsWindow@Mittens@@UEAAXXZ)
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function "private: virtual void __cdecl Mittens::WindowsWindow::Init(struct Mittens::WindowProps const &)" (?Init@WindowsWindow@Mittens@@EEAAXAEBUWindowProps@2@@Z)
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function "public: virtual void __cdecl Mittens::WindowsWindow::OnUpdate(void)" (?OnUpdate@WindowsWindow@Mittens@@UEAAXXZ)
-WindowsWindow.obj : error LNK2019: unresolved external symbol glfwSwapInterval referenced in function "public: virtual void __cdecl Mittens::WindowsWindow::SetVSync(bool)" (?SetVSync@WindowsWindow@Mittens@@UEAAX_N@Z)
-..\bin\Debug-windows-x86_64\MittensLib\MittensLib.dll : fatal error LNK1120: 8 unresolved externals
+  MittensLib.vcxproj -> C:\Users\Matheus\Documents\GitHub\Mittens\Mittens\bin\Debug-windows-x86_64\MittensLib\MittensLib.dll

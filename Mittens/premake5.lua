@@ -14,11 +14,12 @@ workspace "Mittens"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 --Projects
-include "MittensLib/vendor/glfw"
+include "MittensLib/vendor/GLFW"
 include "MittensLib/vendor/imgui"
 include "MittensLib"
 include "Mittens"
 -- 
+
 
 newaction 
 {

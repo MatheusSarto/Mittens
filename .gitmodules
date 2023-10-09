@@ -1,0 +1,3 @@
+[submodule "Mittens/MittensLib/vendor/GLFW"]
+	path = Mittens/MittensLib/vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git

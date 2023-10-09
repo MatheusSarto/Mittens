@@ -30,11 +30,15 @@ project "MittensLib"
     "%{IncludeDir.VulkanSDK}"
 	}
 
-  --links
-  --{
-    --"GLFW",
-    --"ImGui"
-  --}
+	links
+	{
+		"%{Library.WinSock}",
+		"%{Library.WinMM}",
+		"%{Library.WinVersion}",
+		"%{Library.BCrypt}",
+		"GLFW",
+		"opengl32.lib"
+	}
 
 	filter "system:windows"
 		systemversion "latest"
@@ -51,20 +55,14 @@ project "MittensLib"
 			"%{Library.WinMM}",
 			"%{Library.WinVersion}",
 			"%{Library.BCrypt}",
+			"GLFW",
+			"opengl32.lib"
 		}
 
 	filter "configurations:Debug"
 		defines "DEBUG"
 		runtime "Debug"
 		symbols "on"
-
-		links
-		{
-			--"%{Library.ShaderC_Debug}",
-			--"%{Library.SPIRV_Cross_Debug}",
-			--"%{Library.SPIRV_Cross_GLSL_Debug}",
-			--"%{Library.SPIRV_Tools_Debug}"
-		}
 
 	filter "configurations:Release"
 		defines "RELEASE"
