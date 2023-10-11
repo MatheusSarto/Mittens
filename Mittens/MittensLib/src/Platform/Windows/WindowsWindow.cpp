@@ -1,6 +1,7 @@
 #pragma once
 #include "mtspch.h"
 #include "WindowsWindow.h"
+#include "MittensLib/Events/MouseEvent.h"
 
 namespace Mittens
 {
@@ -38,6 +39,15 @@ namespace Mittens
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
+
+		// Setting Events Callbacks
+
+		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
+		{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+				//WindowResizeEvent event(width, height);
+		});
 	}
 
 	void WindowsWindow::Shutdown() 

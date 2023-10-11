@@ -10,8 +10,8 @@ namespace Mittens
 	enum EventCategory
 	{
 		None = 0,
-		Input,
-		e_Application
+		InputCategory = BIT(0),
+		ApplicationCategory = BIT(1)
 	};
 
 	enum class EventType
