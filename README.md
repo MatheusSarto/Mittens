@@ -27,8 +27,8 @@ Desenvolvedores envolvidos diretamente na criação do projeto:
       </td>
     </tr>
   </table>
-
-
+</td>
+ <td>
   <table>
     <tr>
       <td align="center">
