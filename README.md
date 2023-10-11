@@ -12,7 +12,9 @@
 
 Desenvolvedores envolvidos diretamente na criação do projeto:
 
-<div display: inline-block, width: 300>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+ <td>
   <table>
     <tr>
       <td align="center">
@@ -39,6 +41,8 @@ Desenvolvedores envolvidos diretamente na criação do projeto:
       </td>
     </tr>
   </table>
-</div>
+ </td>
+ </tr>
+</table>
 
 [⬆ Voltar ao topo](#GGMaker)<br>
