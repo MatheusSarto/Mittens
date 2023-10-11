@@ -35,7 +35,7 @@ echo Starting compilation
 start vendor\bin\premake\premake5.exe vs2022
 
 echo Setting solution file
-set solutionFile = "RPGProj.sln"
+set solutionFile = "Mittens.sln"
 
 if not defined DevEnvDir
 (
