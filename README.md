@@ -11,34 +11,34 @@
 ## 🤝 Desenvolvedores 
 
 Desenvolvedores envolvidos diretamente na criação do projeto:
-<tr>
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/MatheusSarto" target="_blank">
-        <img src="https://github.com/MatheusSarto.png" width="100px;" alt="ProfilePic"/><br>
-        <sub>
-          <b>Matheus Sarto</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/AshnOne" target="_blank">
-        <img src="https://github.com/AshnOne.png" width="100px;" alt="ProfilePic"/><br>
-        <sub>
-          <b>Matheus Rezende Figueiredp</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+<div display: inline-block, width: 300>
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/MatheusSarto" target="_blank">
+          <img src="https://github.com/MatheusSarto.png" width="100px;" alt="ProfilePic"/><br>
+          <sub>
+            <b>Matheus Sarto</b>
+          </sub>
+        </a>
+      </td>
+    </tr>
+  </table>
 
-</tr>
 
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/AshnOne" target="_blank">
+          <img src="https://github.com/AshnOne.png" width="100px;" alt="ProfilePic"/><br>
+          <sub>
+            <b>Matheus Rezende Figueiredp</b>
+          </sub>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 [⬆ Voltar ao topo](#GGMaker)<br>
