@@ -12,7 +12,6 @@
 
 Desenvolvedores envolvidos diretamente na criação do projeto:
 <table>
-
 <table>
   <tr>
     <td align="center">
@@ -39,7 +38,7 @@ Desenvolvedores envolvidos diretamente na criação do projeto:
   </tr>
 </table>
 
-<\table>
+</table>
 
 
 [⬆ Voltar ao topo](#GGMaker)<br>
