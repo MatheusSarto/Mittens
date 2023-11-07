@@ -3,6 +3,7 @@
 #include "Application.h"
 #include "Events/EventHandler.h"
 #include "handlerTest.h"
+#include "Events/ApplicationEvent.h"
 
 namespace Mittens
 {
@@ -21,18 +22,29 @@ namespace Mittens
 
 	void Application::OnEvent(Event& e)
 	{
-		OutputDebugStringA("\nPRINT ON EVENT\n");
-		OutputDebugStringA(e.GetName());
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
+		std::cout << "\nApplication Event (" << e.GetName() << "), INFO: \n";
 	}
 
 	// Application Loop
 	void Application::Run(void)
 	{
-		OutputDebugStringA("Run Loop\n");
+		WindowResizeEvent e(1280, 720);
+		std::cout << e.GetName();
+
+		std::cout << "Run Loop\n";
 		while (m_Running)
 		{
 			// Do stuff
 			m_Window->OnUpdate();
 		}
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& e)
+	{
+		m_Running = false;
+
+		return true;
 	}
 }

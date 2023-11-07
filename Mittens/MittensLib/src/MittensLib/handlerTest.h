@@ -11,7 +11,6 @@ namespace Mittens
 		handler() {}
 		virtual void OnEvent() override
 		{
-			OutputDebugStringA("Key Pressed Event TEST");
-		}
+			std::cout << "Key Pressed Event Test\n";		}
 	};
 }

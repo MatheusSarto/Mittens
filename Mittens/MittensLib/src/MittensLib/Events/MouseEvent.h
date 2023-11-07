@@ -14,44 +14,39 @@ namespace Mittens
 		int m_Button;
 	};
 
-	class MTS_API MousePressedEvent : public MouseButton
+	class MTS_API MouseButtonPressedEvent : public MouseButton
 	{
 	public:
-		MousePressedEvent(int button_code)
-			: MouseButton(button_code)
-		{
-		}
+		MouseButtonPressedEvent(int button_code)
+			: MouseButton(button_code) { }
 
 		EVENT_CLASS_TYPE(Mouse_Button_Pressed)
 		EVENT_CLASS_CATEGORY(InputCategory)
-	protected:
 
 	};
 
-	class MTS_API MouseReleasedEvent : public MouseButton
+	class MTS_API MouseButtonReleasedEvent : public MouseButton
 	{
 	public:
-		MouseReleasedEvent(int button_code)
-			: MouseButton(button_code)
-		{
-		}
+		MouseButtonReleasedEvent(int button_code)
+			: MouseButton(button_code) { }
 
 		EVENT_CLASS_TYPE(Mouse_Button_Released)
 		EVENT_CLASS_CATEGORY(InputCategory)
-	protected:
-
 	};
 
 	class MTS_API MouseScrolledEvent : public Event
 	{
 	public:
-		MouseScrolledEvent()
-		{
-		}
+		MouseScrolledEvent(float xOffSet, float yOffSet) 
+			: m_xOffSet(xOffSet), m_yOffSet(yOffSet) { }
+
+		inline float GetXOffSet() const { return m_xOffSet; }
+		inline float GetYOffSet() const { return m_yOffSet; }
 
 		EVENT_CLASS_TYPE(Mouse_Scrolled)
 		EVENT_CLASS_CATEGORY(InputCategory)
-	protected:
+	private:
 		float m_xOffSet;
 		float m_yOffSet;
 	};
@@ -59,13 +54,15 @@ namespace Mittens
 	class MTS_API MouseMovedEvent : public Event
 	{
 	public:
-		MouseMovedEvent()
-		{
-		}
+		MouseMovedEvent(float x, float y) 
+			: m_MouseX(x), m_MouseY(y) { }
+
+		inline float GetX() const { return m_MouseX; }
+		inline float GetY() const { return m_MouseY; }
 
 		EVENT_CLASS_TYPE(Mouse_Moved)
-		EVENT_CLASS_CATEGORY(InputCategory)
-	protected:
+		EVENT_CLASS_CATEGORY(InputCategory | InputCategory)
+	private:
 		float m_MouseX;
 		float m_MouseY;
 	};

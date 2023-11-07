@@ -3,6 +3,7 @@
 #include <vector>
 #include<map>
 #include<forward_list>
+#include "MittensLib/Core.h";
 #include "Events/EventHandler.h"
 
 namespace Mittens
@@ -10,8 +11,11 @@ namespace Mittens
 	enum EventCategory
 	{
 		None = 0,
-		InputCategory = BIT(0),
-		ApplicationCategory = BIT(1)
+		InputCategory        = BIT(0),
+		ApplicationCategory  = BIT(1),
+		KeyboardCategory     = BIT(2),
+		MouseCategory        = BIT(3),
+		MouseButtonCategory  = BIT(4)
 	};
 
 	enum class EventType
@@ -22,8 +26,9 @@ namespace Mittens
 		App_Render, App_Tick, App_Update
 	};
 
-	class Event
+	class MTS_API Event
 	{
+		friend class EventDispatcher;
 	public:
 		
 		virtual ~Event() = default;
@@ -35,48 +40,28 @@ namespace Mittens
 		bool m_Handled;
 	};
 
-	class EventQueue
+
+	class EventDispatcher
 	{
-	// ------EVENT QUEUE INTERFACE------
 	public:
-
-		friend class Application;
-
-		void QueueEvent(EventType eventType, EventHandler* handler)
+		EventDispatcher(Event& event)
+			: m_Event(event)
 		{
-			auto it = m_Handlers.find(eventType);
-			if (it == m_Handlers.end())
-			{
-				m_Handlers[eventType] = Handlers();
-			}
-
-			m_Handlers[eventType].push_front(handler);
 		}
-	
-		typedef std::forward_list<EventHandler*> Handlers;
-		typedef std::map<EventType, Handlers> ObserversMap;
 
-		ObserversMap m_Handlers;
+		// F will be deduced by the compiler
+		template<typename T, typename F>
+		bool Dispatch(const F& func)
+		{
+			if (m_Event.GetEventType() == T::GetStaticType())
+			{
+				m_Event.m_Handled |= func(static_cast<T&>(m_Event));
+				return true;
+			}
+			return false;
+		}
 	private:
-		EventQueue() {}
-
-		void NotifyAll()
-		{
-			for (ObserversMap::iterator it = m_Handlers.begin(); it != m_Handlers.end(); ++it)
-			{
-				for (auto& o : m_Handlers[it->first]) {
-					o->OnEvent();
-				}
-			}
-		}
-		void Notify(EventType eventType)
-		{
-			for (auto& o : m_Handlers[eventType]) {
-				o->OnEvent();
-			}
-		}
-
-		static void Dispatch() {}
+		Event& m_Event;
 	};
 
 	#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
