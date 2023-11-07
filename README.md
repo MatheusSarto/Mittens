@@ -8,6 +8,8 @@
 
 > Projeto ainda em desenvolvimento, no momento somente as dependencias foram adicionadas e configuradas.
 
+Para rodar o projeto basta copiar o repositório Git, e logo em seguida, em seu CMD, digitar "(Caminho até a raiz do repositório)/Mittens/Generate.bat build". O projeto só pode ser aberto por alguma IDE, no momento ainda não há executável.
+
 ## 🤝 Desenvolvedores 
 
 Desenvolvedores envolvidos diretamente na criação do projeto:
