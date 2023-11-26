@@ -9,7 +9,7 @@ public:
 
 Mittens::Application* Mittens::CreateApplication()
 {
-	OutputDebugStringA("Creating Application\n");
+	std::cout << "Creating Application\n";
 	return new AppInstance();
 }
 

@@ -1,7 +1,7 @@
 project "MittensLib"
   kind "SharedLib"
   language "C++"
-  cppdialect "C++17"
+  cppdialect "C++20"
   staticruntime "off"
 
   targetname "%{prj.name}"
@@ -62,11 +62,13 @@ project "MittensLib"
 	filter "configurations:Debug"
 		defines "DEBUG"
 		runtime "Debug"
+		buildoptions "/MDd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "RELEASE"
 		runtime "Release"
+		buildoptions "/MD"
 		optimize "on"
 
 		links
@@ -79,6 +81,7 @@ project "MittensLib"
 	filter "configurations:Dist"
 		defines "DIST"
 		runtime "Release"
+		buildoptions "/MD"
 		optimize "on"
 
 		links
