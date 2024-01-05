@@ -8,8 +8,7 @@ namespace Mittens
 	class MTS_API Layer
 	{
 	public:
-		Layer(const std::string name = "Layer");
-		Layer(const std::string& name);
+		Layer(const std::string& name = "Layer");
 		virtual ~Layer();
 
 		virtual void OnAttach() {}

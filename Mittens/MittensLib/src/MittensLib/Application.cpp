@@ -1,4 +1,5 @@
 #pragma once
+#include "Mittens.h"
 #include "mtspch.h"
 #include "Application.h"
 #include "Events/EventHandler.h"
@@ -52,10 +53,11 @@ namespace Mittens
 		std::cout << "Run Loop\n";
 		while (m_Running)
 		{
+			// Update All Layers
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 
-			// Do stuff
+			// Update Window
 			m_Window->OnUpdate();
 		}
 	}
