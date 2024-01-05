@@ -1,8 +1,13 @@
 #pragma once
 
 #include "MittensLib/Window.h"
-
+#include "MittensLib/Events/MouseEvent.h"
+#include "MittensLib/Events/KeyEvent.h"
+#include "MittensLib/Events/ApplicationEvent.h"
+#include <string>
+#include <sstream>
 #include <GLFW/glfw3.h>
+#include <GLAD/glad.h>
 
 namespace Mittens
 {

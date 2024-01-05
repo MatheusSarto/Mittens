@@ -1,11 +1,6 @@
 #pragma once
 #include "mtspch.h"
 #include "WindowsWindow.h"
-#include "MittensLib/Events/MouseEvent.h"
-#include "MittensLib/Events/KeyEvent.h"
-#include "MittensLib/Events/ApplicationEvent.h"
-#include <string>
-#include <sstream>
 
 namespace Mittens
 {
@@ -51,11 +46,12 @@ namespace Mittens
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
 		// Setting Events Callbacks
-
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 		{
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);

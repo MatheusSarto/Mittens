@@ -5,6 +5,7 @@
 #include "Events/ApplicationEvent.h"
 #include "Window.h"
 #include "MittensLib/LayerStack.h";
+#include "Events/EventHandler.h"
 
 namespace Mittens
 {

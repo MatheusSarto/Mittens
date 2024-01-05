@@ -25,6 +25,7 @@ project "MittensLib"
     "src",
 	"src/MittensLib",
     "%{IncludeDir.GLFW}",
+	"%{IncludeDir.GLAD}",
     "%{IncludeDir.ImGui}",
     "%{IncludeDir.glm}",
     "%{IncludeDir.VulkanSDK}"
@@ -36,6 +37,7 @@ project "MittensLib"
 		"%{Library.WinMM}",
 		"%{Library.WinVersion}",
 		"%{Library.BCrypt}",
+		"GLAD",
 		"GLFW",
 		"opengl32.lib"
 	}
@@ -46,7 +48,8 @@ project "MittensLib"
 		defines
 		{
 			"PLATAFORM_WINDOWS",
-			"BUILD_DLL"
+			"BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		links

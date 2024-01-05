@@ -2,8 +2,8 @@
 #include "Mittens.h"
 #include "mtspch.h"
 #include "Application.h"
-#include "Events/EventHandler.h"
-#include "Events/ApplicationEvent.h"
+
+#include <GLAD/glad.h>
 
 namespace Mittens
 {

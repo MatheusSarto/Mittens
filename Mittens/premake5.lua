@@ -16,6 +16,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 --Projects
 include "MittensLib/vendor/GLFW"
 include "MittensLib/vendor/imgui"
+include "MittensLib/vendor/GLAD"
 include "MittensLib"
 include "Mittens"
 -- 
