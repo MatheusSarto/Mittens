@@ -1,3 +1,6 @@
 [submodule "Mittens/MittensLib/vendor/GLFW"]
 	path = Mittens/MittensLib/vendor/GLFW
 	url = https://github.com/TheCherno/glfw.git
+[submodule "Mittens/MittensLib/vendor/imgui"]
+	path = Mittens/MittensLib/vendor/imgui
+	url = https://github.com/MatheusSarto/imgui.git
